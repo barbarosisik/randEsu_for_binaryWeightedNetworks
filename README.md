@@ -1,7 +1,7 @@
 # Rand-ESU Algorithm Adaptation for Binary-Weighted Networks
 
 ### To run:
-1. Clone the repository or download and extract it.
+1. Clone the repository or download and extract.
 2. Navigate to the project folder in the terminal.
 3. (Optional) Set up a virtual environment and activate it.
 4. Install dependencies with pip install -r requirements.txt.
