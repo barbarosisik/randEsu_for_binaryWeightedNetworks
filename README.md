@@ -100,6 +100,7 @@ For datasets with higher edge weights, it is recommended to reduce it if you wan
 
 ### Modifications Compared to Initial Rand-ESU:
 *Weight Integration:* The algorithm incorporates edge weights to guide subgraph extension, unlike the initial algorithm which only considered nodes.
+
 *Selective Inclusion:* The probabilistic inclusion of 0-weight edges balances efficiency with motif diversity.
 
 ### Barbaros ISIK & Virginia SAMEZ.
