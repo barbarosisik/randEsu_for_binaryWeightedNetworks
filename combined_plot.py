@@ -9,9 +9,6 @@ with open("modified_rand_esu_results.pkl", "rb") as f:
 with open("initial_rand_esu_results.pkl", "rb") as f:
     initial_results = pickle.load(f)
 
-# with open("esa_results.pkl", "rb") as f:
-#     esa_results = pickle.load(f)
-
 #subgraph sizes
 subgraph_sizes = [3, 4, 5, 6, 7, 8]
 
@@ -25,8 +22,6 @@ for idx, dataset_name in enumerate(modified_results.keys()):
     plt.plot(subgraph_sizes, list(modified_results[dataset_name].values()), color=colors[idx], linestyle=linestyles[0], marker='o', label=f'Modified Rand-ESU {dataset_name}')
     #initial Rand-ESU results
     plt.plot(subgraph_sizes, list(initial_results[dataset_name].values()), color=colors[idx], linestyle=linestyles[1], marker='x', label=f'Initial Rand-ESU {dataset_name}')
-    # #ESA results
-    # plt.plot(subgraph_sizes, list(esa_results[dataset_name].values()), color=colors[idx], linestyle=linestyles[2], marker='s', label=f'ESA {dataset_name}')
 
 plt.xscale('linear')
 plt.yscale('log')
