@@ -35,28 +35,28 @@ run.py: Runs all evaluation and plotting scripts sequentially.
 
 ## Algorithms:
 ### Initial Rand-ESU Algorithm:
-function rand_esu_sampling_initial(Graph G, int k, List p_d):
-    for each node v in G:
-        V_subgraph ← {v}
-        V_extension ← neighbors(v) where u > v
-        call extend_subgraph_initial(V_subgraph, V_extension, 1)
+    function rand_esu_sampling_initial(Graph G, int k, List p_d):
+        for each node v in G:
+            V_subgraph ← {v}
+            V_extension ← neighbors(v) where u > v
+            call extend_subgraph_initial(V_subgraph, V_extension, 1)
+        
+    function extend_subgraph_initial(Set V_subgraph, Set V_extension, int depth):
+        if |V_subgraph| = k:
+            yield subgraph induced by V_subgraph
+            return
+        
+        if depth ≥ |p_d|:
+            return
 
-function extend_subgraph_initial(Set V_subgraph, Set V_extension, int depth):
-    if |V_subgraph| = k:
-        yield subgraph induced by V_subgraph
-        return
+        for each next_node in V_extension:
+            if random() > p_d[depth]:
+                continue
 
-    if depth ≥ |p_d|:
-        return
-
-    for each next_node in V_extension:
-        if random() > p_d[depth]:
-            continue
-
-        V_extension ← V_extension \ {next_node}
-        new_extension ← V_extension ∪ {neighbors(next_node) \ V_subgraph}
-        call extend_subgraph_initial(V_subgraph ∪ {next_node}, new_extension, depth + 1)
-        V_extension ← V_extension ∪ {next_node}
+            V_extension ← V_extension \ {next_node}
+            new_extension ← V_extension ∪ {neighbors(next_node) \ V_subgraph}
+            call extend_subgraph_initial(V_subgraph ∪ {next_node}, new_extension, depth + 1)
+            V_extension ← V_extension ∪ {next_node}
 
 *Edit:* The variable w, originally representing the "next node" for extension, was renamed to next_node to clarify its role in subgraph expansion.
 
