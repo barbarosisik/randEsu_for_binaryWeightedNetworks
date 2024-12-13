@@ -34,7 +34,7 @@ combined_plot.py: Combines and visualizes the sampling speed results for differe
 run.py: Runs all evaluation and plotting scripts sequentially.
 
 ## Algorithms:
-### Initial Rand-ESU Algorithm:
+### Initial Rand-ESU Algorithm Pseudo-code:
     function rand_esu_sampling_initial(Graph G, int k, List p_d):
         for each node v in G:
             V_subgraph ← {v}
@@ -57,7 +57,44 @@ run.py: Runs all evaluation and plotting scripts sequentially.
             new_extension ← V_extension ∪ {neighbors(next_node) \ V_subgraph}
             call extend_subgraph_initial(V_subgraph ∪ {next_node}, new_extension, depth + 1)
             V_extension ← V_extension ∪ {next_node}
-
 *Edit:* The variable w, originally representing the "next node" for extension, was renamed to next_node to clarify its role in subgraph expansion.
+
+### New Algorithm: Rand-ESU for Binary Weighted Networks Pseudo-code:
+    function rand_esu_sampling(Graph G, int k):
+        for each node v in G:
+            V_subgraph ← {v}
+            V_extension ← neighbors(v) where u > v
+            call extend_subgraph(V_subgraph, V_extension, 1)
+
+    function extend_subgraph(Set V_subgraph, Set V_extension, int depth):
+        if |V_subgraph| = k:
+            yield subgraph induced by V_subgraph
+            return
+
+        V_extension_list ← shuffled list of V_extension
+        for each next_node in V_extension_list:
+            w ← weight of edge (min(V_subgraph), next_node) or (next_node, min(V_subgraph))
+
+            if w is None:
+                continue
+
+            if w = 1 or (w = 0 and random() < 0.02):
+                V_extension ← V_extension \ {next_node}
+                new_extension ← V_extension ∪ {neighbors(next_node) \ V_subgraph}
+                call extend_subgraph(V_subgraph ∪ {next_node}, new_extension, depth + 1)
+                V_extension ← V_extension ∪ {next_node}
+                
+*Edge Weight Accounting:* The variable w explicitly tracks the edge weight between the subgraph and the candidate node.
+
+*Binary Weight Filtering:* Edges with a weight of 1 are always included, while edges with a weight of 0 are included probabilistically (2% chance). The reason why it is set to 2% is the problem of not being able to sample subgraphs, which is encountered in different network datasets (especially with very few edges with weights larger than the treshold). For different jobs and projects, it can be changed.
+For datasets with higher edge weights, it is recommended to reduce it if you want to focus on the most unique subgraphs as much as possible. 
+
+*Shuffled Extension Set:* The extension set is shuffled at each recursion to introduce randomness into motif detection.
+
+*Recursive Expansion:* The algorithm expands the subgraph recursively while considering the binary weights of edges.
+
+### Modifications Compared to Initial Rand-ESU:
+*Weight Integration:* The algorithm incorporates edge weights to guide subgraph extension, unlike the initial algorithm which only considered nodes.
+*Selective Inclusion:* The probabilistic inclusion of 0-weight edges balances efficiency with motif diversity.
 
 ### Barbaros ISIK & Virginia SAMEZ.
