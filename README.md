@@ -169,12 +169,16 @@ When we did the same for other datasets, we got the following results:
 ### Resistance Network:
 
 *From Initial Algorithm:*
+
 ![resistance_initial_subgraph_significance](https://github.com/user-attachments/assets/956f96bd-8100-457f-ba52-b0774c7f4bc2)
+
 Starting from 0.0->0.517, if we go through the nodes clockwise in order and look at the edge-weights:
 1,1,1,1,1,1,2 and after binarization:0,0,0,0,0,0,1.
 
 *From New Algorithm:*
+
 ![resistance_weighted_subgraph_significance](https://github.com/user-attachments/assets/7c61d1e8-adc0-47fc-ab39-6a962e68692e)
+
 Starting from 0.0->0.056, if we go through the nodes clockwise in order and look at the edge-weights:
 1,1,2,1,4,1,2 and after binarization:0,0,1,0,1,0,1.
 
@@ -183,12 +187,16 @@ New Algorithms subgraphs binary edge weights: 0,0,1,0,1,0,1.
 
 ### Copenhagen Network:
 *From Initial Algorithm:*
+
 ![copenhagen_initial_subgraph_significance](https://github.com/user-attachments/assets/a2ae89a9-b29c-4dac-a6d9-eee2deb1c154)
+
 Starting from 0.0->2.0, if we go through the nodes clockwise in order and look at the edge-weights:
 1,1,1,1,1,1,1 and after binarization:0,0,0,0,0,0,0.
 
 *From New Algorithm:*
+
 ![cophenagen_weighted_subgraph_significance](https://github.com/user-attachments/assets/98c9b62d-ad2c-43dc-a863-b7b833b29748)
+
 Starting from 0.0->599.0, if we go through the nodes clockwise in order and look at the edge-weights:
 2,2,2,2,2,2,2 and after binarization: 1,1,1,1,1,1,1.
 
