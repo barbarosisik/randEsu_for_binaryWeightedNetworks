@@ -103,4 +103,42 @@ For datasets with higher edge weights, it is recommended to reduce it if you wan
 
 *Selective Inclusion:* The probabilistic inclusion of 0-weight edges balances efficiency with motif diversity.
 
+## Evaluation Explanation and Analysis
+The evaluation for the Initial Rand-ESU and Modified Rand-ESU (for Binary Weighted Networks) algorithms was performed across five diverse datasets:
+
+1. Bitcoin Alpha Trust Network
+2. Host Pathogen Interactions
+3. Colombian City Inter-Zone Mobility
+4. Resistance
+5. Copenhagen Networks Study
+
+- Subgraphs of sizes 3 through 8 vertices were sampled, with 1000 iterations for each subgraph size.
+- The sampling speed was measured in terms of subgraphs processed per second, and the results were plotted for comparison.
+
+### Sampling Speed Plot Analysis:
+As was done in A Faster Algorithm for Detecting Networks, where the Initial Rand-ESU algorithm was introduced, we evaluated our algorithm with Subgraph Sampling Speed. (The reason why we did not use a parameter like Subgraph Sampling Quality is that with the changes we made to motif significance, we have already enabled our new algorithm to sample more significant subgraphs).
+
+![combined_rand_esu_sampling_speed_plot](https://github.com/user-attachments/assets/2f75b757-89c8-466d-b1a3-0e2ae325fbda)
+
+The plot depicts the sampling speed (logarithmic scale) against the subgraph size for both algorithms across all datasets. Key observations and analysis are as follows:
+
+- *Expected Decrease in Sampling Speed for New Algorithm (Binary Weight Rand-ESU):*
+As expected, the Modified Rand-ESU is slower than the Initial Rand-ESU due to the added complexity of weight accounting. The additional weight-checking mechanism and probabilistic inclusion of lower-weight edges inherently slow down the process.
+
+- *Performance Comparison Highlights:*
+Despite the slower overall performance of the modified algorithm, there are notable instances where the new algorithm equaled or surpassed the sampling speed of the initial algorithm:
+    - Modified Rand-ESU for Bitcoin Alpha Trust Network nearly matched the Initial Rand-ESU for Copenhagen Networks Study when sampling 5-vertex subgraphs.
+    - The Modified Rand-ESU Bitcoin Alpha Trust Network outperformed the Initial Rand-ESU for Host Pathogen Interactions in sampling 4-vertex subgraphs. This demonstrates the potential of the new algorithm in specific network conditions.
+
+- *Dataset-Specific Variations:*
+    - The Bitcoin Alpha Trust Network consistently performed better under the Modified Rand-ESU algorithm, likely due to its high density and binary structure, which aligned well with the algorithm’s design.
+
+### Conclusion:
+
+The Modified Rand-ESU Algorithm successfully incorporates edge weights into the subgraph sampling process, with a tradeoff in sampling speed. While the new algorithm is generally slower than the Initial Rand-ESU, it demonstrates competitive performance in certain datasets and subgraph sizes, which validates its utility for weighted network analysis.
+
+This evaluation underscores that the modified algorithm is particularly suited for datasets where edge weights carry significant importance in motif detection, while the Initial Rand-ESU remains advantageous for purely topological motif analysis.
+
+Based on all these results, we can see that we have made the Rand-ESU algorithm suitable for Binary Weighted Networks, without taking it too far from the purpose for which it was developed (to be faster than the previous algorithm, ESA).
+
 ### Barbaros ISIK & Virginia SAMEZ.
