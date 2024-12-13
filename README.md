@@ -33,6 +33,6 @@ weighted_rand_esu_eval.py: Evaluation of the modified Rand-ESU algorithm with bi
 combined_plot.py: Combines and visualizes the sampling speed results for different datasets and algorithms.
 run.py: Runs all evaluation and plotting scripts sequentially.
 
-## 
+## Algorithms
 
 ### Barbaros ISIK & Virginia SAMEZ.
