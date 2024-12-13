@@ -1,0 +1,5 @@
+networkx==3.1
+matplotlib==3.7.2
+tqdm==4.66.1
+pandas==1.5.3
+pickle5==0.0.12
