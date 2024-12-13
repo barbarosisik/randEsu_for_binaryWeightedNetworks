@@ -1,5 +1,13 @@
 # Rand-ESU Algorithm Adaptation for Binary-Weighted Networks
 
+### To run:
+1. Clone the repository or download and extract it.
+2. Navigate to the project folder in the terminal.
+3. (Optional) Set up a virtual environment and activate it.
+4. Install dependencies with pip install -r requirements.txt.
+5. Ensure datasets are correctly placed and paths in scripts are valid.
+6. Run the main script with python run.py.
+
 ## Description:
 This project focuses on adapting and evaluating the Rand-ESU algorithm to work with binary-weighted networks. The primary objectives include implementing modifications to the Rand-ESU algorithm for binary-weighted networks, evaluating its performance on multiple datasets, and visualizing the detected subgraphs and sampling speed. Offering a new way to detect more significant subgraphs in binary weighted networks.
 
