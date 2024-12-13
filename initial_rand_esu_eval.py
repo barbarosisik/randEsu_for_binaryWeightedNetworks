@@ -76,11 +76,11 @@ def measure_sampling_speed_and_subgraphs_initial(G, k, p_d, iterations=1000):
 
 #datasets
 datasets = {
-    "Bitcoin Alpha Trust Network": "/Users/barbarosisik/Desktop/social_network_analysis_for_computer_scientists/final_project/contribution/bitcoin_alpha_trust_network/bitcoinalpha.csv", 
-    "Host Pathogen Interactions": "/Users/barbarosisik/Desktop/social_network_analysis_for_computer_scientists/final_project/contribution/host_pathogen_interactions_2015/species_interactions_eid2_weighted.csv",
-    "Colombian City Inter-Zone Mobility": "/Users/barbarosisik/Desktop/social_network_analysis_for_computer_scientists/final_project/contribution/colombian_city_inter-zone_mobility/OD_DB_Man2005_weighted.csv",
-    "Resistance": "/Users/barbarosisik/Desktop/social_network_analysis_for_computer_scientists/final_project/contribution/comm-f2f-Resistance/network/network17_new.csv",
-    "Cophenagen Networks Study": "/Users/barbarosisik/Desktop/social_network_analysis_for_computer_scientists/final_project/contribution/cophenagen_networks_study_icon/bt_symmetric.csv"
+    "Bitcoin Alpha Trust Network": "path/to/bitcoin_alpha_trust_network/bitcoinalpha.csv", 
+    "Host Pathogen Interactions": "path/to/host_pathogen_interactions_2015/species_interactions_eid2_weighted.csv",
+    "Colombian City Inter-Zone Mobility": "path/to/colombian_city_inter-zone_mobility/OD_DB_Man2005_weighted.csv",
+    "Resistance": "path/to/comm_f2f_Resistance/network/network17_new.csv",
+    "Cophenagen Networks Study": "path/to/cophenagen_networks_study_icon/bt_symmetric.csv"
 }
 
 #subgraph sizes and probabilities
