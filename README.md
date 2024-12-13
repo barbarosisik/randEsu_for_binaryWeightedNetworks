@@ -137,7 +137,7 @@ This evaluation underscores that the modified algorithm is particularly suited f
 Based on all these results, we can see that we have made the Rand-ESU algorithm suitable for Binary Weighted Networks, without taking it too far from the purpose for which it was developed (to be faster than the previous algorithm, ESA).
 
 ## Detecting Significant Subgraphs:
-To test one of the main sub-objectives of our project, to focus on more significant subgraphs, we printed and analyzed the top 10 subgraphs detected in 8 sized-subgraphs of the Bitcoin Alpha Trust Network, Resistance and Copenhagen network datasets.
+To test one of the main sub-objectives of our project, to focus on more significant subgraphs, we printed and analyzed a random selected subgraph detected in 8 sized-subgraphs of the Bitcoin Alpha Trust Network, Resistance and Copenhagen network datasets.
 
 ### Bitcoin Alpha Trust Network:
 *From Initial Algorithm:*
