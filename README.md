@@ -115,6 +115,7 @@ The evaluation for the Initial Rand-ESU and Modified Rand-ESU (for Binary Weight
 4. Resistance
 5. Copenhagen Networks Study
 
+- The original weights of the datasets were binary converted by taking treshold=2, i.e. edges with edge weight 1 were set equal to 0 and edges with edge weight 2 or more were set equal to 1. 
 - Subgraphs of sizes 3 through 8 vertices were sampled, with 1000 iterations for each subgraph size.
 - The sampling speed was measured in terms of subgraphs processed per second, and the results were plotted for comparison.
 
