@@ -13,7 +13,7 @@ with open("initial_rand_esu_results.pkl", "rb") as f:
 subgraph_sizes = [3, 4, 5, 6, 7, 8]
 
 #plotting
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(16, 8))
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k'] 
 linestyles = ['-', '--', ':']
 
@@ -28,6 +28,7 @@ plt.yscale('log')
 plt.xlabel('Subgraph Size (vertices)')
 plt.ylabel('Sampling Speed (subgraphs/second)')
 plt.title('Rand-ESU Sampling Speed vs Subgraph Size for Different Datasets')
-plt.legend()
-plt.savefig("combined_rand_esu_sampling_speed_plot.png")
+plt.subplots_adjust(right=0.65)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+plt.savefig("combined_rand_esu_sampling_speed_plot.png", bbox_inches='tight')
 plt.show()
