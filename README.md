@@ -122,7 +122,7 @@ The evaluation for the Initial Rand-ESU and Modified Rand-ESU (for Binary Weight
 ### Sampling Speed Plot Analysis:
 As was done in A Faster Algorithm for Detecting Networks, where the Initial Rand-ESU algorithm was introduced, we evaluated our algorithm with Subgraph Sampling Speed. (The reason why we did not use a parameter like Subgraph Sampling Quality is that with the changes we made to motif significance, we have already enabled our new algorithm to sample more significant subgraphs).
 
-![combined_rand_esu_sampling_speed_plot](https://github.com/user-attachments/assets/2f75b757-89c8-466d-b1a3-0e2ae325fbda)
+![combined_rand_esu_sampling_speed_plot](https://github.com/user-attachments/assets/09ac833c-640e-4e9c-8402-c7588318c0ec)
 
 The plot depicts the sampling speed (logarithmic scale) against the subgraph size for both algorithms across all datasets. Key observations and analysis are as follows:
 
