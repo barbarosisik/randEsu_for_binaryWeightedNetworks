@@ -205,6 +205,7 @@ Starting from 0.0->599.0, if we go through the nodes clockwise in order and look
 2,2,310,2,2,2,2,2 and after binarization: 1,1,1,1,1,1,1,1.
 
 Initial Algorithms subgraphs binary edge weights: 0,0,1,0,0,0,0,0.
+
 New Algorithms subgraphs binary edge weights: 1,1,1,1,1,1,1,1.
 
 The comparison of subgraphs detected by the initial and new algorithms highlights the significant improvement in the quality and relevance of subgraphs obtained using the new algorithm. By incorporating edge weights into the motif detection process, the new algorithm consistently identifies subgraphs with higher significance across all datasets. For example, in the Bitcoin Alpha Trust Network, the new algorithm produced subgraphs with a majority of binary weights as 1, indicating stronger connections, whereas the initial algorithm's subgraphs predominantly contained binary weights of 0. Similar results were observed in the Resistance and Copenhagen networks, where the new algorithm identified subgraphs with more meaningful structures and higher-weight edges. These findings demonstrate that the modified Rand-ESU algorithm successfully prioritizes more significant subgraphs, aligning with the project’s goal of enhancing motif detection in weighted networks.
