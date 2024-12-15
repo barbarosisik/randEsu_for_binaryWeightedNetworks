@@ -127,7 +127,7 @@ for dataset_name, file_path in datasets.items():
 with open("modified_rand_esu_results.pkl", "wb") as f:
     pickle.dump(sampling_speeds_all, f)
 
-#visualizing Detected Subgraphs
+#visualizing detected subgraph
 output_dir = "detected_subgraphs"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -137,7 +137,7 @@ for dataset_name, subgraphs_by_size in detected_subgraphs_all.items():
         plt.title(f"Detected Motifs of Size {size} for {dataset_name}")
         count = 0
         for subgraph in subgraphs[:1]:
-            plt.subplot(1, 10, count + 1)
+            plt.subplot(1, 1, count + 1)
             pos = nx.spring_layout(subgraph)
             draw_networkx(subgraph, pos=pos, with_labels=True, node_size=400, font_size=8)
             plt.axis('off')
