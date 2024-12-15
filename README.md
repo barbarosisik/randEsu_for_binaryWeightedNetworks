@@ -154,7 +154,7 @@ To test one of the main sub-objectives of our project, to focus on more signific
 ![bitcoin_initial_subgraph_significance](https://github.com/user-attachments/assets/c3425869-1bd8-4fc7-ad32-a120dbd5ac27)
 
 As seen above, the weights of all edges of the 8-sized subgraph obtained randomly from the network, if we sort the edges going to each node in the direction of 7595->7556 starting from 7595->7595->hour:
--10,1,1,2,1,1,1,1,1,1. After binarization: 0,0,0,1,0,0,0,0,0,0.
+-10,1,2,1,1,1,1. After binarization: 0,0,1,0,0,0,0.
 
 Then,
 
@@ -163,11 +163,11 @@ Then,
 ![bitcoin_weighted_subgraph_significance](https://github.com/user-attachments/assets/fa6b53a8-8281-4be5-8729-6bdfae4dc0f5)
 
 With the new algorithm, if we want to see the edge-weights of the 8-sized subgraph obtained again, we see that the edge-weights of the subgraph above, starting from 1->1261, we go through the nodes clockwise in order and look at the edge-weights:
-2,1,2,2,2,2,2,3,2, and after binarization: 1,0,1,1,1,1,1,1,1,1.
+2,1,2,2,2,3,2 and after binarization: 1,0,1,1,1,1,1.
 
 So, we can easily see that the subgraphs acquired after the new algorithm is included are much, much significant.
-Initial Algorithms subgraphs binary edge weights: 0,0,0,1,0,0,0,0,0,0.
-New Algorithms subgraphs binary edge weights: 1,0,1,1,1,1,1,1,1,1.
+Initial Algorithms subgraphs binary edge weights: 0,0,1,0,0,0,0.
+New Algorithms subgraphs binary edge weights: 1,0,1,1,1,1,1.
 
 When we did the same for other datasets, we got the following results:
 ### Resistance Network:
@@ -177,17 +177,17 @@ When we did the same for other datasets, we got the following results:
 ![resistance_initial_subgraph_significance](https://github.com/user-attachments/assets/956f96bd-8100-457f-ba52-b0774c7f4bc2)
 
 Starting from 0.0->0.517, if we go through the nodes clockwise in order and look at the edge-weights:
-1,1,1,1,1,1,2 and after binarization:0,0,0,0,0,0,1.
+1,1,1,7,1,1,1,2 and after binarization: 0,0,0,1,0,0,0,1.
 
 *From New Algorithm:*
 
 ![resistance_weighted_subgraph_significance](https://github.com/user-attachments/assets/7c61d1e8-adc0-47fc-ab39-6a962e68692e)
 
 Starting from 0.0->0.056, if we go through the nodes clockwise in order and look at the edge-weights:
-1,1,2,1,4,1,2 and after binarization:0,0,1,0,1,0,1.
+1,2,7,1,4,1,2,1 and after binarization: 0,1,1,0,1,0,1,0.
 
-Initial Algorithms subgraphs binary edge weights: 0,0,0,0,0,0,1.
-New Algorithms subgraphs binary edge weights: 0,0,1,0,1,0,1.
+Initial Algorithms subgraphs binary edge weights: 0,0,0,1,0,0,0,1.
+New Algorithms subgraphs binary edge weights: 0,1,1,0,1,0,1,0.
 
 ### Copenhagen Network:
 *From Initial Algorithm:*
@@ -195,14 +195,17 @@ New Algorithms subgraphs binary edge weights: 0,0,1,0,1,0,1.
 ![copenhagen_initial_subgraph_significance](https://github.com/user-attachments/assets/a2ae89a9-b29c-4dac-a6d9-eee2deb1c154)
 
 Starting from 0.0->2.0, if we go through the nodes clockwise in order and look at the edge-weights:
-1,1,1,1,1,1,1 and after binarization:0,0,0,0,0,0,0.
+1,1,310,1,1,1,1,1 and after binarization:0,0,1,0,0,0,0,0.
 
 *From New Algorithm:*
 
 ![cophenagen_weighted_subgraph_significance](https://github.com/user-attachments/assets/98c9b62d-ad2c-43dc-a863-b7b833b29748)
 
 Starting from 0.0->599.0, if we go through the nodes clockwise in order and look at the edge-weights:
-2,2,2,2,2,2,2 and after binarization: 1,1,1,1,1,1,1.
+2,2,310,2,2,2,2,2 and after binarization: 1,1,1,1,1,1,1,1.
+
+Initial Algorithms subgraphs binary edge weights: 0,0,1,0,0,0,0,0.
+New Algorithms subgraphs binary edge weights: 1,1,1,1,1,1,1,1.
 
 The comparison of subgraphs detected by the initial and new algorithms highlights the significant improvement in the quality and relevance of subgraphs obtained using the new algorithm. By incorporating edge weights into the motif detection process, the new algorithm consistently identifies subgraphs with higher significance across all datasets. For example, in the Bitcoin Alpha Trust Network, the new algorithm produced subgraphs with a majority of binary weights as 1, indicating stronger connections, whereas the initial algorithm's subgraphs predominantly contained binary weights of 0. Similar results were observed in the Resistance and Copenhagen networks, where the new algorithm identified subgraphs with more meaningful structures and higher-weight edges. These findings demonstrate that the modified Rand-ESU algorithm successfully prioritizes more significant subgraphs, aligning with the project’s goal of enhancing motif detection in weighted networks.
 
