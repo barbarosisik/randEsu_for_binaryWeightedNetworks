@@ -117,7 +117,7 @@ for dataset_name, file_path in datasets.items():
 with open("initial_rand_esu_results.pkl", "wb") as f:
     pickle.dump(sampling_speeds_all, f)
 
-#visualizing Detected Subgraphs
+#visualizing detected subgraph
 output_dir = "detected_subgraphs_initial"
 os.makedirs(output_dir, exist_ok=True)
 
