@@ -153,7 +153,7 @@ To test one of the main sub-objectives of our project, to focus on more signific
 
 ![bitcoin_initial_subgraph_significance](https://github.com/user-attachments/assets/c3425869-1bd8-4fc7-ad32-a120dbd5ac27)
 
-As seen above, the weights of all edges of the 8-sized subgraph obtained randomly from the network, if we sort the edges going to each node in the direction of 7595->7556 starting from 7595->7595->hour:
+As seen above, the weights of all edges of the first obtained 8-sized subgraph from the network, if we sort the edges going to each node in the clockwise order starting from 7595->7556:
 -10,1,2,1,1,1,1. After binarization: 0,0,1,0,0,0,0.
 
 Then,
